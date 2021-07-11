@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #boxes{
+        border: 1px solid  black;
+        width: 50px;
+        height: 50px;
+        flex:1
+    }
+    .color1{
+        background-color: royalblue;
+    }
+    .color2{
+        background-color: skyblue;
+    }
+</style>
+<body>
+    <div class="container">
+        {% for x in range(0,column): %}
+        <div id=columns class= {%if x % 2 == 0 %} "color1" {% else %} "color2" {% endif %}>
+            {% for x in range(0,row): %}
+            <div id=boxes>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
