@@ -4,42 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Checkerboard</title>
 </head>
 <style>
-    body{
-        width: 70%;
-        margin: 0 auto;
-    }
-    .container{
-        display: flex;
-        flex-flow: row wrap;
-        margin-top: 1.5em;
-        width: {{size}}px;
-    }
-    .boxes{
+    .color1{
         width: 75px;
         height: 75px;
-    }
-    .color1{
-        background-color: royalblue;
+        background-color:{{color1}};
     }
     .color2{
-        background-color: skyblue;
+        width: 75px;
+        height: 75px;
+        background-color: {{color2}};
     }
 </style>
 <body>
-    <div class="container">
-        {% for x in range(0,boxes): %}
-        <div class="boxes color1" >
-        </div>
-        <div class="boxes color2" >
-        </div>
-        {% endfor %}
-        {% for x in range(0,extrabox): %}
-        <div class="boxes color1" >
-        </div>
-        {% endfor %}
-    </div>
+    {% for i in range(0,row): %}
+    <table>
+        <tr>
+            {% for j in range(0,column): %}
+            <td class="color{{ (i+j)%2+1 }}"></td>
+            {% endfor %}</tr>
+    {% endfor %}
+    </table>
 </body>
 </html>

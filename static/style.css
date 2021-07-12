@@ -1,0 +1,25 @@
+
+    *{
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    h1{
+        color: aqua;
+    }
+    body{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .color1{
+        width: 75px;
+        height: 75px;
+        background-color: red;
+    }
+    .color2{
+        width: 75px;
+        height: 75px;
+        background-color: black;
+    }
+    table{
+        border-spacing: 0px;
+    }
